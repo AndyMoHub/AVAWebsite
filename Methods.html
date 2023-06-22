@@ -49,7 +49,7 @@
         <div class="method-content">
           <h2> Calculating Snow Plow Routes  </h2>   
           <p>We began our analysis by 
-            finding the cost to clear a road. To get these results we first performed the analysis in ArcGIS Pro. In ArcGIS software We created a new field called "TotalPlowCost" under the feature class "ROAD_w_Lanes" and formulated this equation to determine the cost of snowplow routes. 
+            finding the cost to clear a road. To get these results we first performed the analysis in ArcGIS Pro. In ArcGIS software we created a new field called "TotalPlowCost" under the feature class "ROAD_w_Lanes" and formulated this equation to determine the cost of snowplow routes. 
           <p>
             Formula: 
             TotalPlowCost = Number of Lanes * Road Length * (Cost per Meter to Run a Truck) * (Total # of Snow Plow Trips)
@@ -63,9 +63,9 @@
         <div class="methods-section">
             <h2>Calculating Sewage Cost | Linear Referencing</h2>
             <p> In order to perform a network analysis, we figured out that we needed to do some linear referencing. Our first step began by creating centroids from each 
-                parcel boundary
+                parcel boundary.
                 We accomplished this by using the 'Feature to Point' geoprocessing tool in ArcGIS Pro. Next we created a model that linear references the centroids and the 
-                sanitary discharge points
+                sanitary discharge points.
     
             <div class="methods2-linear-image">
                 <img src="images/method2.jpg" alt="linear-referencing">
@@ -85,7 +85,7 @@
         <div class="methods-section">
             <h2>Calculating Sewage Cost | Topology </h2>
             <p>We created topolgy rules for each feature dataset. Seven of the rules were assigned to the linear 
-                network (sanitary/storm linear network) and two of them pertaining to the point layers. A model was created using Modelbuilder 
+                network (sanitary/storm linear network) and two of them pertained to the point layers. A model was created using Modelbuilder 
                 to add these topology rules to each topology feature class in the sanitary and storm feature datasets. After these 
                 rules were created, all topologies were validated.
 
@@ -102,7 +102,7 @@
                 feature dataset. After the network dataset was created, the network properties 
                 were modified to align with our objective of identifying the closest properties to each sewer 
                 based on distance instead of other variables like drivetime. These modifications took place by 
-                updating the travel mode name to 'Pipe' and the travel cost evaluator to 'Shape_Length.'
+                updating the travel mode name to 'Pipe' and the travel cost evaluator to 'Shape_Length'.
             </p>
             
             <p>
@@ -110,8 +110,7 @@
                 and the discharge points were loaded as the facilities. After the closest facility analysis was 
                 run for each dataset, output routes were created which show the paths from the facilities 
                 (discharge points) to the closest incident (property centroid). The amount of properties that 
-                each sewer serviced and the cost of the pipe were calculated using various joins which will be 
-                described in further detail in subsequent  sections.
+                each sewer serviced and the cost of the pipe were calculated using various joins.
             </p>
            
             <div class="methods2-ca-image">
@@ -140,7 +139,7 @@
                 by first creating the new field in "ROAD_w_LANES." Moreover, the code is dynamic so the user can enter different numbers for "cost to 
                 run a snow truck" and the "amount of snow trucks that go out anually." The Script also filters out roads that aren't maintained by the city. 
                 In our case Peterborough does not maintain "Private (PRV)" roads. So our script ensures that PRV roads have a value of 0. Once the script finishes, 
-                it should have successfuly created the new field, calculated the total snow plow cost and show the sum of the snow plow cost
+                it should have successfuly created the new field, calculated the total snow plow cost and show the sum of the snow plow cost.
             <div class="methods1-auto-image">
                 <img src="images/method1.1.jpg" alt="Snowplow-automation">
             </p>
@@ -150,9 +149,9 @@
             <h2>Calculating Sewage Cost | Automation</h2>
             <p>We created a script that automates the following processes; Linear Referencing, Splitting Centroids,
                 Creating Feauture datasets, Topology Rules, Network Datasets, and Closest Facility. This was achieved 
-                by exporting all the models created in modelbuilder as python files. We compiled the code together, 
-                renamed variables and set filespaths to fit our geodatabase. We ensured that little hardcoding was required
-                so that the user would only have to input their filepath to their geodatabase once and the whole script will run.
+                by exporting all the models created in modelbuilder as Python files. We compiled the code together, 
+                renamed variables and set filespaths to fit our geodatabase. We ensured little hardcoding was required by designing the script so that it would prompt the user
+                to input their geodatabase only once. This ensured that there was seamless execution of the entire script. 
             <div class="methods1-auto-image">
                 <img src="images/method3.jpg" alt="sewage-automation">
                 <img src="images/method3.1.jpg" alt="closest-facility">
@@ -165,7 +164,7 @@
 
         <div class="methods-section">
             <h2>Papermap</h2>
-            <p>A large paper cartographic output was created in order to represent the sanitary sewage and storm sewage networks
+            <p>A large paper cartographic output was created in order to represent the sanitary sewage and storm sewage networks.
                 The picture shows some of the cartographic conventions we used when symbolizing our map.
             <div class="methods2-linear-image">
                 <img src="images/method5.jpg" alt="Snowplow-automation">
